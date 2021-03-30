@@ -62,7 +62,9 @@ const CityList = () => {
 
 	return (
 		<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-			<div style={{ fontSize: "24px" }}>Climapp</div>
+			<div style={{ fontSize: "24px", display: "flex", alignItems: "center" }}>
+				Climapp
+			</div>
 			<div
 				style={{
 					display: "flex",

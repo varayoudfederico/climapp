@@ -65,27 +65,11 @@ const CityList = () => {
 			<div style={{ fontSize: "24px", display: "flex", alignItems: "center" }}>
 				Climapp
 			</div>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-					alignItems: "center",
-					paddingTop: "16px",
-					paddingBottom: "8px",
-				}}
-			>
+			<div className="subtitle">
 				<div style={{ color: "#aaaaaa" }}>Ubicación actual</div>
 			</div>
 			<CityCurrent elegirCiudad={cambiarCiudad} />
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-					alignItems: "center",
-					paddingTop: "16px",
-					paddingBottom: "8px",
-				}}
-			>
+			<div className="subtitle">
 				<div style={{ color: "#aaaaaa", paddingRight: "16px" }}>
 					Ciudades guardadas
 				</div>

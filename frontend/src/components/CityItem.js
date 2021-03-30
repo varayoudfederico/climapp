@@ -13,8 +13,10 @@ const CityItem = (props) => {
 					<EnvironmentOutlined />
 				</span>
 				<span style={{ marginLeft: "8px" }}>
-					{props.ciudad.name}
-					<span className="country-code-color"> {props.ciudad.country}</span>
+					<span>{props.ciudad.name}</span>
+					<span style={{ color: "#aaaaaa", paddingLeft: "4px" }}>
+						{props.ciudad.country}
+					</span>
 				</span>
 			</div>
 			<Button

@@ -36,8 +36,7 @@ const CityCurrent = () => {
 						<CompassOutlined />
 					</div>
 					<span>{currentCity.name}</span>
-					<span style={{ color: "#aaaaaa", paddingLeft: "2px" }}>
-						{" "}
+					<span style={{ color: "#aaaaaa", paddingLeft: "4px" }}>
 						{currentCity.country}
 					</span>
 				</div>

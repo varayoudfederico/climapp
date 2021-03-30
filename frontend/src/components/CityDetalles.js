@@ -54,7 +54,6 @@ const CityDetalles = () => {
 							<span
 								style={{
 									color: "#aaaaaa",
-
 									fontSize: "20px",
 								}}
 							>

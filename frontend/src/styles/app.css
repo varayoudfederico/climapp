@@ -33,6 +33,26 @@ body {
 	background-color: #fafafa;
 }
 
+.city-item-card {
+	border-radius: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border: 0px;
+	background-color: #fafafa;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+}
+
+.city-item-icon {
+	color: #900c3e;
+}
+
+.country-code-color {
+	color: #aaaaaa;
+}
+
 .detalles-row {
 	display: flex;
 	justify-content: space-between;

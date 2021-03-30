@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { Statistic } from "antd";
 import Context from "../Context";
-import { Space } from "antd";
-import moment, { utc } from "moment";
+import moment from "moment";
 import "moment/locale/es";
 import { iconTranslator } from "../utils/IconTranslator";
 import {
-	WiDaySunny,
 	WiThermometerExterior,
 	WiStrongWind,
 	WiHumidity,

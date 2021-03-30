@@ -1,23 +1,18 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import Context from "../Context";
 import ForecastItem from "./ForecastItem";
-import moment from "moment";
-
 
 const CityForecast = () => {
 	const { forecast } = useContext(Context);
 
 	const renderListaCiudades = () =>
 		forecast.map((dia) => {
-			console.log("Dia render: ", dia);
 			return (
 				<div>
 					<ForecastItem dia={dia} />
 				</div>
 			);
 		});
-
-	// console.log("Forecast detalle", forecast.list);
 
 	return (
 		<div>

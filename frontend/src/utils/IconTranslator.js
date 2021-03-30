@@ -19,7 +19,6 @@ import {
 } from "weather-icons-react";
 
 export const iconTranslator = (iconText, size) => {
-	console.log("Buscando icono: ", iconText);
 	if (size === "small") {
 		switch (iconText) {
 			case "01d":

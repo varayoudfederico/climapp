@@ -22,7 +22,6 @@ const CityCurrent = () => {
 				lat: response.data.data.lat,
 				lon: response.data.data.lon,
 			};
-			console.log(ciudad);
 			setCurrentCity(ciudad);
 		} catch (e) {
 			message.error("No se pudo obtener ubicacion");

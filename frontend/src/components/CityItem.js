@@ -5,22 +5,16 @@ import { DeleteOutlined, EnvironmentOutlined } from "@ant-design/icons";
 const CityItem = (props) => {
 	return (
 		<div
-			className={"card"}
-			style={{
-				display: "flex",
-				justifyContent: "space-between",
-				alignItems: "center",
-				padding: "12px",
-			}}
+			className="city-item-card"
 			onClick={() => props.elegirCiudad(props.ciudad)}
 		>
 			<div>
-				<span style={{ color: "#900C3E" }}>
+				<span className="city-item-icon">
 					<EnvironmentOutlined />
 				</span>
 				<span style={{ marginLeft: "8px" }}>
 					{props.ciudad.name}
-					<span style={{ color: "#aaaaaa" }}> {props.ciudad.country}</span>
+					<span className="country-code-color"> {props.ciudad.country}</span>
 				</span>
 			</div>
 			<Button

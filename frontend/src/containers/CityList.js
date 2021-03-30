@@ -4,13 +4,7 @@ import Context from "../Context";
 import { Button, Modal, Input } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import CityCurrent from "../components/CityCurrent";
-
-import {
-	fetchCity,
-	fetchForecast,
-	fetchWeatherByCity,
-	fetchForecastByCity,
-} from "../api/api";
+import { fetchCity } from "../api/api";
 
 const CityList = () => {
 	const [listaCiudades, setListaCiudades] = useState(
@@ -39,17 +33,14 @@ const CityList = () => {
 		try {
 			let request = fetchCity(currentInput);
 			let response = await request;
-			// console.log("RESPUESTA: ", response.data);
+			let array = [...listaCiudades];
 
-			// console.log(response.data.data);
-			var array = [...listaCiudades];
 			array.push(response.data.data);
-			console.log(array);
+
 			setListaCiudades(array);
 			setCurrentInput("");
 			setIsModalVisible(false);
 		} catch (e) {
-			// console.log("No se encontro ciudad");
 			Modal.warning({
 				content: "No se encontro ciudad, intente nuevamente",
 			});
@@ -58,7 +49,6 @@ const CityList = () => {
 
 	const renderListaCiudades = () =>
 		listaCiudades.map((ciudad) => {
-			console.log(ciudad);
 			return (
 				<div>
 					<CityItem
@@ -109,6 +99,8 @@ const CityList = () => {
 			<Modal
 				title="Agregar Ciudad"
 				visible={isModalVisible}
+				okText="Buscar y Agregar"
+				cancelText="Cancelar"
 				onOk={agregarCiudad}
 				onCancel={() => setIsModalVisible(false)}
 			>

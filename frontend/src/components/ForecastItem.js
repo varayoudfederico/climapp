@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import moment from "moment";
 import { iconTranslator } from "../utils/IconTranslator";
 import "moment/locale/es";
 
 const ForecastItem = (dia) => {
-	console.log(dia);
-
 	moment.locale("es");
 
 	const { dt } = dia.dia;

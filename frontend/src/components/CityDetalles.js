@@ -102,7 +102,7 @@ const CityDetalles = () => {
 						<WiThermometerExterior size={30} color="#ff6361" />
 					</div>
 					<Statistic
-						title="Sensasion Termica"
+						title="Sensación Térmica"
 						value={Math.round(feels_like) + "°"}
 					/>
 				</div>
@@ -124,7 +124,7 @@ const CityDetalles = () => {
 					<div className="weather-statistic">
 						<WiBarometer size={30} color="#58508d" />
 					</div>
-					<Statistic title="Presion" value={pressure + " hPa"} />
+					<Statistic title="Presión" value={pressure + " hPa"} />
 				</div>
 			</div>
 			<div className="detalles-row">

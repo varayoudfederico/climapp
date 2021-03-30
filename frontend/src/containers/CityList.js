@@ -82,7 +82,7 @@ const CityList = () => {
 					paddingBottom: "8px",
 				}}
 			>
-				<div style={{ color: "#aaaaaa" }}>UbicaciÓn Actual</div>
+				<div style={{ color: "#aaaaaa" }}>Ubicación actual</div>
 			</div>
 			<CityCurrent elegirCiudad={cambiarCiudad} />
 			<div
@@ -95,7 +95,7 @@ const CityList = () => {
 				}}
 			>
 				<div style={{ color: "#aaaaaa", paddingRight: "16px" }}>
-					Ciudades Guardadas
+					Ciudades guardadas
 				</div>
 				<Button
 					type="primary"

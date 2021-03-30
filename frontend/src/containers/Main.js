@@ -5,7 +5,7 @@ import CityList from "./CityList";
 
 import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";
 
-import { Modal, message } from "antd";
+import { message } from "antd";
 
 const Main = () => {
 	const [weather, setWeather] = useState();

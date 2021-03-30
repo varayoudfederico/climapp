@@ -62,17 +62,13 @@ const CityList = () => {
 
 	return (
 		<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-			<div style={{ fontSize: "24px", display: "flex", alignItems: "center" }}>
-				Climapp
-			</div>
+			<div style={{ fontSize: "24px" }}>Climapp</div>
 			<div className="subtitle">
 				<div style={{ color: "#aaaaaa" }}>Ubicación actual</div>
 			</div>
 			<CityCurrent elegirCiudad={cambiarCiudad} />
 			<div className="subtitle">
-				<div style={{ color: "#aaaaaa", paddingRight: "16px" }}>
-					Ciudades guardadas
-				</div>
+				<div style={{ color: "#aaaaaa" }}>Ciudades guardadas</div>
 				<Button
 					type="primary"
 					onClick={() => setIsModalVisible(true)}

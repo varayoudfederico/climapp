@@ -19,6 +19,12 @@ body {
 	padding: 16px;
 }
 
+.title {
+	display: flex;
+	font-size: 40px;
+	align-items: center;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;

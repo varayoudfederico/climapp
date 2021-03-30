@@ -49,17 +49,16 @@ const CityDetalles = () => {
 					}}
 				>
 					<div style={{ fontSize: "22px" }}>
-						{name}
-						<div>
-							<span
-								style={{
-									color: "#aaaaaa",
-									fontSize: "20px",
-								}}
-							>
-								{country}
-							</span>
-						</div>
+						{name}{" "}
+						<span
+							style={{
+								color: "#aaaaaa",
+								fontSize: "20px",
+							}}
+						>
+							{" "}
+							{country}
+						</span>
 					</div>
 				</div>
 

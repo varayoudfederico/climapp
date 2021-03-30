@@ -36,7 +36,7 @@ const Main = () => {
 				setCiudadActual();
 			}
 		};
-		
+
 		if (ciudadActual) {
 			message.loading({
 				key: "loading",

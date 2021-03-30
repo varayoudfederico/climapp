@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Context from "../Context";
 import CityDetalles from "../components/CityDetalles";
 import CityForecast from "../components/CityForecast";
-
 import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 

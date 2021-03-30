@@ -65,7 +65,7 @@ body {
 	margin-bottom: 8px;
 	border: 0px;
 	background-color: #fafafa;
-	width: -webkit-fill-available;
+	width: 100%;
 	padding: 8px;
 }
 

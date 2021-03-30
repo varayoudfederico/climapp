@@ -55,9 +55,13 @@ const Main = () => {
 		setCiudadActual(ciudad);
 	};
 
+	const ocultarMensaje = () => {
+		message.destroy("loading");
+	};
+
 	const renderView = () => {
 		if (ciudadActual && weather && forecast) {
-			message.destroy("loading");
+			ocultarMensaje();
 			return <City />;
 		} else {
 			return <CityList />;

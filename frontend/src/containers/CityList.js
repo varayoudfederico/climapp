@@ -50,7 +50,7 @@ const CityList = () => {
 	const renderListaCiudades = () =>
 		listaCiudades.map((ciudad) => {
 			return (
-				<div>
+				<div key={`${ciudad.name} - ${ciudad.country}`}>
 					<CityItem
 						elegirCiudad={cambiarCiudad}
 						eliminarCiudad={eliminarCiudad}

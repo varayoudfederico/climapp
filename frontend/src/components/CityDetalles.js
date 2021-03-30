@@ -50,11 +50,17 @@ const CityDetalles = () => {
 				>
 					<div style={{ fontSize: "22px" }}>
 						{name}
-						<span
-							style={{ color: "#aaaaaa", paddingLeft: "8px", fontSize: "20px" }}
-						>
-							{country}
-						</span>
+						<div>
+							<span
+								style={{
+									color: "#aaaaaa",
+
+									fontSize: "20px",
+								}}
+							>
+								{country}
+							</span>
+						</div>
 					</div>
 				</div>
 
@@ -100,6 +106,7 @@ const CityDetalles = () => {
 						<WiThermometerExterior size={30} color="#ff6361" />
 					</div>
 					<Statistic
+						valueStyle={{ fontSize: "20px" }}
 						title="Sensación Térmica"
 						value={Math.round(feels_like) + "°"}
 					/>
@@ -108,7 +115,11 @@ const CityDetalles = () => {
 					<div className="weather-statistic">
 						<WiStrongWind size={30} color="#003f5c" />
 					</div>
-					<Statistic title="Viento" value={wind_speed + " m/s"} />
+					<Statistic
+						valueStyle={{ fontSize: "20px" }}
+						title="Viento"
+						value={wind_speed + " m/s"}
+					/>
 				</div>
 			</div>
 			<div className="detalles-row">
@@ -116,13 +127,21 @@ const CityDetalles = () => {
 					<div className="weather-statistic">
 						<WiHumidity size={30} color="#51A2DA" />
 					</div>
-					<Statistic title="Humedad" value={humidity + "%"} />
+					<Statistic
+						valueStyle={{ fontSize: "20px" }}
+						title="Humedad"
+						value={humidity + "%"}
+					/>
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
 						<WiBarometer size={30} color="#58508d" />
 					</div>
-					<Statistic title="Presión" value={pressure + " hPa"} />
+					<Statistic
+						valueStyle={{ fontSize: "20px" }}
+						title="Presión"
+						value={pressure + " hPa"}
+					/>
 				</div>
 			</div>
 			<div className="detalles-row">
@@ -131,6 +150,7 @@ const CityDetalles = () => {
 						<WiSunrise size={30} color="#FFC300" />
 					</div>
 					<Statistic
+						valueStyle={{ fontSize: "20px" }}
 						title="Amanecer"
 						value={moment
 							.unix(sunrise - timezone_offset)
@@ -143,6 +163,7 @@ const CityDetalles = () => {
 						<WiSunset size={30} color="#900C3E" />
 					</div>
 					<Statistic
+						valueStyle={{ fontSize: "20px" }}
 						title="Atardecer"
 						value={moment
 							.unix(sunset - timezone_offset)

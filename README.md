@@ -2,8 +2,7 @@
 
 Aplicacion para consulta de clima y pronóstico desarrollada en React / Express.js
 
-![Pantalla Principal](https://i.imgur.com/n3UJCqX.png)
-![Pantalla Ciudad](https://i.imgur.com/9uzkB92.png)
+<img src="https://i.imgur.com/n3UJCqX.png"  height="800"><img src="https://i.imgur.com/9uzkB92.png"  height="800">
 
 ## Backend
 
@@ -11,7 +10,7 @@ Desarrollado con Express.js.
 
 Para obtener la informacion tanto del tiempo actual como del pronostico se utilizó la API One Call de OpenWeatherMap por la conveniencia en la forma de devolver la información de clima. Esta API requiere los valores de latitud y longitud de la ciudad que se quiere consultar, por lo que estos datos son obtenidos y almacenados cada vez que se guarda una nueva ciudad.
 
-Endpoints:
+### Endpoints
 
 - /location
   Devuelve la ubicación actual del usuario. Utiliza ip-api.

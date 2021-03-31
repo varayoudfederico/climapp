@@ -4,7 +4,7 @@ Aplicacion para consulta de clima y pronóstico desarrollada en React / Express.
 
 ![Pantalla Principal](https://i.imgur.com/n3UJCqX.png)
 ![Pantalla Ciudad](https://i.imgur.com/9uzkB92.png)
-g
+
 ## Backend
 
 Desarrollado con Express.js.

@@ -31,23 +31,8 @@ const CityDetalles = () => {
 
 	return (
 		<div className="container">
-			<div
-				className="card"
-				style={{
-					display: "flex",
-					width: "100%",
-					justifyContent: "space-between",
-					alignItems: "center",
-					padding: "12px",
-				}}
-			>
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "start",
-					}}
-				>
+			<div className="card-detalles-header">
+				<div className="flex-column-center">
 					<div style={{ fontSize: "22px" }}>
 						{name}{" "}
 						<span
@@ -60,23 +45,6 @@ const CityDetalles = () => {
 							{country}
 						</span>
 					</div>
-				</div>
-
-				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "flex-end",
-					}}
-				>
-					<div style={{ display: "flex", justifyContent: "flex-end" }}>
-						{iconTranslator(icon, "big")}
-					</div>
-					<div
-						style={{ fontSize: "26px", fontWeight: "500", textAlign: "end" }}
-					>
-						{Math.round(temp) + "°"}
-					</div>
 					<div
 						style={{
 							color: "#aaaaaa",
@@ -85,6 +53,22 @@ const CityDetalles = () => {
 						}}
 					>
 						{description}
+					</div>
+				</div>
+				<div style={{ display: "flex", justifyContent: "flex-end" }}>
+					{iconTranslator(icon, "big")}
+				</div>
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "flex-end",
+					}}
+				>
+					<div
+						style={{ fontSize: "36px", fontWeight: "500", textAlign: "end" }}
+					>
+						{Math.round(temp) + "°"}
 					</div>
 				</div>
 			</div>

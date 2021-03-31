@@ -22,66 +22,66 @@ export const iconTranslator = (iconText, size) => {
 	if (size === "small") {
 		switch (iconText) {
 			case "01d":
-				return <WiDaySunny size={24} color="#888888" />;
+				return <WiDaySunny size={24} color="#000" />;
 			case "02d":
-				return <WiDayCloudy size={24} color="#888888" />;
+				return <WiDayCloudy size={24} color="#000" />;
 			case "03d":
-				return <WiCloud size={24} color="#888888" />;
+				return <WiCloud size={24} color="#000" />;
 			case "04d":
-				return <WiCloudy size={24} color="#888888" />;
+				return <WiCloudy size={24} color="#000" />;
 			case "09d":
-				return <WiDayShowers size={24} color="#888888" />;
+				return <WiDayShowers size={24} color="#000" />;
 			case "10d":
-				return <WiDayRain size={24} color="#888888" />;
+				return <WiDayRain size={24} color="#000" />;
 			case "11d":
-				return <WiDayThunderstorm size={24} color="#888888" />;
+				return <WiDayThunderstorm size={24} color="#000" />;
 			case "13d":
-				return <WiDaySnow size={24} color="#888888" />;
+				return <WiDaySnow size={24} color="#000" />;
 			case "50d":
-				return <WiFog size={24} color="#888888" />;
+				return <WiFog size={24} color="#000" />;
 			default:
-				return <WiDaySunny size={24} color="#888888" />;
+				return <WiDaySunny size={24} color="#000" />;
 		}
 	} else {
 		switch (iconText) {
 			case "01n":
-				return <WiNightClear size={36} color="#000" />;
+				return <WiNightClear size={50} color="#900C3E" />;
 			case "02n":
-				return <WiNightPartlyCloudy size={36} color="#000" />;
+				return <WiNightPartlyCloudy size={50} color="#900C3E" />;
 			case "03n":
-				return <WiNightCloudy size={36} color="#000" />;
+				return <WiNightCloudy size={50} color="#900C3E" />;
 			case "04n":
-				return <WiNightCloudy size={36} color="#000" />;
+				return <WiNightCloudy size={50} color="#900C3E" />;
 			case "09n":
-				return <WiNightShowers size={36} color="#000" />;
+				return <WiNightShowers size={50} color="#900C3E" />;
 			case "10n":
-				return <WiNightRain size={36} color="#000" />;
+				return <WiNightRain size={50} color="#900C3E" />;
 			case "11n":
-				return <WiNightThunderstorm size={36} color="#000" />;
+				return <WiNightThunderstorm size={50} color="#900C3E" />;
 			case "13n":
-				return <WiNightSnow size={36} color="#000" />;
+				return <WiNightSnow size={50} color="#900C3E" />;
 			case "50n":
-				return <WiNightFog size={36} color="#000" />;
+				return <WiNightFog size={50} color="#900C3E" />;
 			case "01d":
-				return <WiDaySunny size={36} color="#000" />;
+				return <WiDaySunny size={50} color="#900C3E" />;
 			case "02d":
-				return <WiDayCloudy size={36} color="#000" />;
+				return <WiDayCloudy size={50} color="#900C3E" />;
 			case "03d":
-				return <WiCloud size={36} color="#000" />;
+				return <WiCloud size={50} color="#900C3E" />;
 			case "04d":
-				return <WiCloudy size={36} color="#000" />;
+				return <WiCloudy size={50} color="#900C3E" />;
 			case "09d":
-				return <WiDayShowers size={36} color="#000" />;
+				return <WiDayShowers size={50} color="#900C3E" />;
 			case "10d":
-				return <WiDayRain size={36} color="#000" />;
+				return <WiDayRain size={50} color="#900C3E" />;
 			case "11d":
-				return <WiDayThunderstorm size={36} color="#000" />;
+				return <WiDayThunderstorm size={50} color="#900C3E" />;
 			case "13d":
-				return <WiDaySnow size={36} color="#000" />;
+				return <WiDaySnow size={50} color="#900C3E" />;
 			case "50d":
-				return <WiFog size={36} color="#000" />;
+				return <WiFog size={50} color="#900C3E" />;
 			default:
-				return <WiNightClear size={36} color="#000" />;
+				return <WiNightClear size={50} color="#900C3E" />;
 		}
 	}
 };

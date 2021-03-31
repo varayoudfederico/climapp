@@ -6,9 +6,9 @@ const CityForecast = () => {
 	const { forecast } = useContext(Context);
 
 	const renderListaCiudades = () =>
-		forecast.map((dia) => {
+		forecast.map((dia, i) => {
 			return (
-				<div>
+				<div key={i}>
 					<ForecastItem dia={dia} />
 				</div>
 			);

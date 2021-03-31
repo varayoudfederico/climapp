@@ -16,3 +16,5 @@ app.use("/v1/", weatherRouter);
 app.listen(port, () => {
 	console.log(`Servidor corriendo en el puerto: ${port}`);
 });
+
+module.exports = app;

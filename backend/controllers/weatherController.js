@@ -13,7 +13,7 @@ const fetchLocation = () => {
 
 const fetchCityInfo = (ciudad) => {
 	const url = `http://api.openweathermap.org/geo/1.0/direct?q=${ciudad}&appid=${API_KEY}`;
-	return axios.get(url);
+	return axios.get(encodeURI(url));
 };
 
 const getCityData = async (req, res) => {
@@ -22,10 +22,10 @@ const getCityData = async (req, res) => {
 		if (response.data[0]) {
 			res.status(200).json({ status: "success", data: response.data[0] });
 		} else {
-			res.status(401).json({ status: "error", data: "No se encontro ciudad" });
+			res.status(404).json({ status: "error", data: "No se encontro ciudad" });
 		}
 	} catch (e) {
-		res.status(401).json({ status: "error", data: "No se encontro ciudad" });
+		res.status(404).json({ status: "error", data: "No se encontro ciudad" });
 	}
 };
 
@@ -35,7 +35,7 @@ const getLocation = async (req, res) => {
 		res.status(200).json({ status: "success", data: response.data });
 	} catch (e) {
 		res
-			.status(401)
+			.status(404)
 			.json({ status: "error", data: "No se pudo obtener ubicacion" });
 	}
 };
@@ -58,12 +58,12 @@ const getWeather = async (req, res) => {
 			})
 			.catch((err) =>
 				res
-					.status(401)
+					.status(404)
 					.json({ status: "error", data: "No se pudo obtener weather" })
 			);
 	} catch (e) {
 		res
-			.status(401)
+			.status(404)
 			.json({ status: "error", data: "No se pudo obtener ubicacion" });
 	}
 };
@@ -82,12 +82,12 @@ const getForecast = async (req, res) => {
 			})
 			.catch((err) =>
 				res
-					.status(401)
+					.status(404)
 					.json({ status: "error", data: "No se pudo obtener forecast" })
 			);
 	} catch (e) {
 		res
-			.status(401)
+			.status(404)
 			.json({ status: "error", data: "No se pudo obtener ubicacion" });
 	}
 };
@@ -112,11 +112,11 @@ const getWeatherByCity = async (req, res) => {
 			})
 			.catch((err) =>
 				res
-					.status(401)
+					.status(404)
 					.json({ status: "error", data: "No se pudo obtener weather" })
 			);
 	} catch (e) {
-		res.status(401).json({ status: "error", data: "No se encontro ciudad" });
+		res.status(404).json({ status: "error", data: "No se encontro ciudad" });
 	}
 };
 
@@ -135,11 +135,11 @@ const getForecastByCity = async (req, res) => {
 			})
 			.catch((err) =>
 				res
-					.status(401)
+					.status(404)
 					.json({ status: "error", data: "No se pudo obtener forecast" })
 			);
 	} catch (e) {
-		res.status(401).json({ status: "error", data: "No se encontro ciudad" });
+		res.status(404).json({ status: "error", data: "No se encontro ciudad" });
 	}
 };
 

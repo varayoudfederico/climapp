@@ -22,13 +22,19 @@ Para obtener la informacion tanto del tiempo actual como del pronostico se utili
   Igual que current pero para el pronostico de los próximos 8 dias.
 
 - /current/:city  
-  Devuelve el estado del tiempo en la ciudad city
+  Devuelve el estado del tiempo en la ciudad city.
 
 - /forecast/:city
-  Devuelve el pronostico del tiempo de los proximos 8 dias en la ciudad city
+  Devuelve el pronostico del tiempo de los proximos 8 dias en la ciudad city.
+
+  - /current/coordinates  
+    Devuelve el estado del tiempo en las coordenadas geograficas lat y lon, que deben pasarse como parametro.
+
+  - /forecast/coordinates  
+    Devuelve el pronostico en las coordenadas geograficas lat y lon, que deben pasarse como parametro.
 
 - /ciudad/:city  
-  Devuelve la información sobre una ciudad, incluyendo país, latitud y longitud. Utiliza la API Geocoding de OpenWeatherMap
+  Devuelve la información sobre una ciudad, incluyendo país, latitud y longitud. Utiliza la API Geocoding de OpenWeatherMap.
 
 ## Frontend
 

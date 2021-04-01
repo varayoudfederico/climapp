@@ -12,12 +12,12 @@ export const fetchCity = (ciudad) => {
 	return axios.get(url);
 };
 
-export const fetchWeatherByCity = (value) => {
-	const url = hostUrl + `/current/${value.name}, ${value.country}`;
+export const fetchWeatherByCity = (ciudad) => {
+	const url = hostUrl + `/current/coordinates?&lat=${ciudad.lat}&lon=${ciudad.lon}`;
 	return axios.get(url);
 };
 
-export const fetchForecastByCity = (value) => {
-	const url = hostUrl + `/forecast/${value.name}, ${value.country}`;
+export const fetchForecastByCity = (ciudad) => {
+	const url = hostUrl + `/forecast/coordinates?&lat=${ciudad.lat}&lon=${ciudad.lon}`;
 	return axios.get(url);
 };

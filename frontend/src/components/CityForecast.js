@@ -1,9 +1,9 @@
 import React from "react";
 import ForecastItem from "./ForecastItem";
 
-const CityForecast = (props) => {
+const CityForecast = ({ forecast }) => {
 	const renderListaCiudades = () =>
-		props.forecast.map((dia, i) => {
+		forecast.map((dia, i) => {
 			return (
 				<div key={i}>
 					<ForecastItem data={dia} />

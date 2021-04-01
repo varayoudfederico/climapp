@@ -2,20 +2,17 @@ import React from "react";
 import { Button } from "antd";
 import { DeleteOutlined, EnvironmentOutlined } from "@ant-design/icons";
 
-const CityItem = (props) => {
+const CityItem = ({ ciudad, elegirCiudad, eliminarCiudad }) => {
 	return (
-		<div
-			className="city-item-card"
-			onClick={() => props.elegirCiudad(props.ciudad)}
-		>
+		<div className="city-item-card" onClick={() => elegirCiudad(ciudad)}>
 			<div>
 				<span className="city-item-icon">
 					<EnvironmentOutlined />
 				</span>
 				<span style={{ marginLeft: "8px" }}>
-					<span>{props.ciudad.name}</span>
+					<span>{ciudad.name}</span>
 					<span style={{ color: "#aaaaaa", paddingLeft: "4px" }}>
-						{props.ciudad.country}
+						{ciudad.country}
 					</span>
 				</span>
 			</div>
@@ -23,7 +20,7 @@ const CityItem = (props) => {
 				type="secondary"
 				onClick={(e) => {
 					e.stopPropagation();
-					props.eliminarCiudad();
+					eliminarCiudad();
 				}}
 				icon={<DeleteOutlined />}
 				shape="circle"

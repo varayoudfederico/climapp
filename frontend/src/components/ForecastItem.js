@@ -3,12 +3,12 @@ import moment from "moment";
 import { iconTranslator } from "../utils/IconTranslator";
 import "moment/locale/es";
 
-const ForecastItem = (props) => {
+const ForecastItem = ({data}) => {
 	moment.locale("es");
 	
-	const { dt } = props.data;
-	const { min, max } = props.data.temp;
-	const { description, icon } = props.data.weather[0];
+	const { dt } = data;
+	const { min, max } = data.temp;
+	const { description, icon } = data.weather[0];
 
 	return (
 		<div>

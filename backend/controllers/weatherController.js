@@ -43,9 +43,7 @@ const getLocation = async (req, res) => {
 const getWeather = async (req, res) => {
 	try {
 		let location = await fetchLocation();
-		let lat = location.data.lat;
-		let lon = location.data.lon;
-		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.data.lat}&lon=${location.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)
 			.then((resp) => {
@@ -71,9 +69,7 @@ const getWeather = async (req, res) => {
 const getForecast = async (req, res) => {
 	try {
 		let response = await fetchLocation();
-		let lat = response.data.lat;
-		let lon = response.data.lon;
-		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.lat}&lon=${response.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)
 			.then((resp) => {
@@ -95,9 +91,7 @@ const getForecast = async (req, res) => {
 const getWeatherByCity = async (req, res) => {
 	try {
 		let response = await fetchCityInfo(req.params.city);
-		let lat = response.data[0].lat;
-		let lon = response.data[0].lon;
-		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
 			.get(url)
@@ -123,9 +117,7 @@ const getWeatherByCity = async (req, res) => {
 const getForecastByCity = async (req, res) => {
 	try {
 		let response = await fetchCityInfo(req.params.city);
-		let lat = response.data[0].lat;
-		let lon = response.data[0].lon;
-		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=es`;
+		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
 			.get(url)

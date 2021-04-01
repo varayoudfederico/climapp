@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
-import Context from "../Context";
+import React from "react";
 import ForecastItem from "./ForecastItem";
 
-const CityForecast = () => {
-	const { forecast } = useContext(Context);
-
+const CityForecast = (props) => {
 	const renderListaCiudades = () =>
-		forecast.map((dia, i) => {
+		props.forecast.map((dia, i) => {
 			return (
 				<div key={i}>
 					<ForecastItem dia={dia} />

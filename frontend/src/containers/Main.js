@@ -58,7 +58,7 @@ const Main = () => {
 	const renderView = () => {
 		if (ciudadActual && weather && forecast) {
 			ocultarMensaje();
-			return <City />;
+			return <City weather={weather} forecast={forecast} />;
 		} else {
 			return <CityList />;
 		}
@@ -68,8 +68,6 @@ const Main = () => {
 		<Context.Provider
 			value={{
 				ciudadActual,
-				weather,
-				forecast,
 				cambiarCiudad,
 			}}
 		>

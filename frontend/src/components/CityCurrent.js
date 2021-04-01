@@ -14,8 +14,7 @@ const CityCurrent = () => {
 
 	const obtenerLocation = async () => {
 		try {
-			let request = fetchLocation();
-			let response = await request;
+			let response = await fetchLocation();
 			let ciudad = {
 				name: response.data.data.city,
 				country: response.data.data.countryCode,
@@ -31,37 +30,33 @@ const CityCurrent = () => {
 	const renderCurrentCity = () => {
 		if (currentCity) {
 			return (
-				<div style={{ display: "flex" }}>
-					<div style={{ marginRight: "8px" }}>
+				<div>
+					<span className="city-item-icon">
 						<CompassOutlined />
-					</div>
-					<span>{currentCity.name}</span>
-					<span style={{ color: "#aaaaaa", paddingLeft: "4px" }}>
-						{currentCity.country}
+					</span>
+					<span style={{ marginLeft: "8px" }}>
+						<span>{currentCity.name}</span>
+						<span style={{ color: "#aaaaaa", paddingLeft: "4px" }}>
+							{currentCity.country}
+						</span>
 					</span>
 				</div>
 			);
 		} else
 			return (
-				<div style={{ display: "flex" }}>
-					<div style={{ marginRight: "8px" }}>
+				<div>
+					<span className="city-item-icon">
 						<LoadingOutlined />
-					</div>
-					Buscando...
+					</span>
+					<span style={{ marginLeft: "8px" }}>
+						<span>Buscando...</span>
+					</span>
 				</div>
 			);
 	};
 
 	return (
-		<div
-			className={"card"}
-			style={{
-				display: "flex",
-				alignItems: "center",
-				padding: "12px",
-			}}
-			onClick={() => cambiarCiudad(currentCity)}
-		>
+		<div className="city-item-card" onClick={() => cambiarCiudad(currentCity)}>
 			<div>{renderCurrentCity()}</div>
 		</div>
 	);

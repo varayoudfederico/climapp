@@ -5,7 +5,7 @@ import CityForecast from "../components/CityForecast";
 import { Button } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 
-const City = () => {
+const City = (props) => {
 	const { cambiarCiudad } = useContext(Context);
 
 	return (
@@ -16,8 +16,8 @@ const City = () => {
 				shape="circle"
 				icon={<ArrowLeftOutlined />}
 			></Button>
-			<CityDetalles />
-			<CityForecast />
+			<CityDetalles weather={props.weather} />
+			<CityForecast forecast={props.forecast} />
 		</div>
 	);
 };

@@ -13,8 +13,8 @@ import {
 	WiSunset,
 } from "weather-icons-react";
 
-const CityDetalles = () => {
-	const { weather, ciudadActual } = useContext(Context);
+const CityDetalles = (props) => {
+	const { ciudadActual } = useContext(Context);
 
 	const { name, country } = ciudadActual;
 	const {
@@ -26,8 +26,8 @@ const CityDetalles = () => {
 		humidity,
 		wind_speed,
 		timezone_offset,
-	} = weather;
-	const { description, icon } = weather.weather[0];
+	} = props.weather;
+	const { description, icon } = props.weather.weather[0];
 
 	return (
 		<div className="container">

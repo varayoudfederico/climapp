@@ -12,6 +12,7 @@ const CityList = () => {
 	);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 	const [currentInput, setCurrentInput] = useState("");
+	
 	const { cambiarCiudad } = useContext(Context);
 
 	//cuando detecta cambio en listaCiudades, lo guarda en localStorage

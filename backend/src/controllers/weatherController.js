@@ -2,10 +2,6 @@ const axios = require("axios");
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 
-const getDefault = (req, res) => {
-	res.status(200).send("Home!");
-};
-
 const fetchLocation = () => {
 	const url = `http://ip-api.com/json/?fields=status,message,countryCode,city,lat,lon`;
 	return axios.get(url);
@@ -97,7 +93,7 @@ const getWeatherByCity = async (req, res) => {
 			.get(url)
 			.then((resp) => {
 				let weather = resp.data.current;
-				weather["timezone_offset"] = -resp.data.timezone_offset;
+				weather["timezone_offset"] = resp.data.timezone_offset;
 				let respuesta = {
 					ciudad: response.data[0],
 					weather: weather,
@@ -136,7 +132,6 @@ const getForecastByCity = async (req, res) => {
 };
 
 module.exports = {
-	getDefault,
 	getLocation,
 	getWeather,
 	getWeatherByCity,

@@ -133,7 +133,7 @@ const CityDetalles = (props) => {
 						valueStyle={{ fontSize: "20px" }}
 						title="Amanecer"
 						value={moment
-							.unix(sunrise - timezone_offset)
+							.unix(sunrise + timezone_offset)
 							.utc()
 							.format("HH:mm")}
 					/>
@@ -146,7 +146,7 @@ const CityDetalles = (props) => {
 						valueStyle={{ fontSize: "20px" }}
 						title="Atardecer"
 						value={moment
-							.unix(sunset - timezone_offset)
+							.unix(sunset + timezone_offset)
 							.utc()
 							.format("HH:mm")}
 					/>

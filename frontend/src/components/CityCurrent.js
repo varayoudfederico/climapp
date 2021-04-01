@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { fetchLocation } from "../api/api";
-import Context from "../Context";
+import Context from "../utils/Context";
 import { message } from "antd";
 import { CompassOutlined, LoadingOutlined } from "@ant-design/icons";
 

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Statistic } from "antd";
-import Context from "../Context";
+import Context from "../utils/Context";
 import moment from "moment";
 import "moment/locale/es";
 import { iconTranslator } from "../utils/IconTranslator";

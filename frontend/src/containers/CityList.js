@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import CityItem from "../components/CityItem";
-import Context from "../Context";
+import Context from "../utils/Context";
 import { Button, Modal, Input } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import CityCurrent from "../components/CityCurrent";

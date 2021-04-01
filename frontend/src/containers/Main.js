@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Context from "../Context";
+import Context from "../utils/Context";
 import City from "./City";
 import CityList from "./CityList";
 import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";

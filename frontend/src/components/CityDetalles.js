@@ -55,16 +55,23 @@ const CityDetalles = (props) => {
 						{description}
 					</div>
 				</div>
-				<div style={{ display: "flex", justifyContent: "flex-end" }}>
-					{iconTranslator(icon, "big")}
-				</div>
+
 				<div
 					style={{
 						display: "flex",
-						flexDirection: "column",
-						justifyContent: "flex-end",
 					}}
 				>
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "flex-end",
+							alignItems: "end",
+							marginRight: "8px",
+							marginTop: "6px",
+						}}
+					>
+						{iconTranslator(icon, "big")}
+					</div>
 					<div
 						style={{ fontSize: "36px", fontWeight: "500", textAlign: "end" }}
 					>

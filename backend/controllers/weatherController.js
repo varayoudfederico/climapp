@@ -1,6 +1,8 @@
 const axios = require("axios");
 
-const API_KEY = "bdb319792d51d86113118df6985312ef";
+const API_KEY = process.env.OPEN_WEATHER_API_KEY;
+
+console.log(API_KEY);
 
 const getDefault = (req, res) => {
 	res.status(200).send("Home!");

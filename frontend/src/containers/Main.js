@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Context from "../Context";
 import City from "./City";
 import CityList from "./CityList";
-
 import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";
-
 import { message } from "antd";
 
 const Main = () => {
@@ -16,8 +14,7 @@ const Main = () => {
 	useEffect(() => {
 		const obtenerWeather = async () => {
 			try {
-				let request = fetchWeatherByCity(ciudadActual);
-				let response = await request;
+				let response = await fetchWeatherByCity(ciudadActual);
 				setWeather(response.data.data.weather);
 			} catch (e) {
 				message.destroy("loading");
@@ -28,8 +25,7 @@ const Main = () => {
 
 		const obtenerForecast = async () => {
 			try {
-				let request = fetchForecastByCity(ciudadActual);
-				let response = await request;
+				let response = await fetchForecastByCity(ciudadActual);
 				setForecast(response.data.data.forecast);
 			} catch (e) {
 				message.destroy("loading");

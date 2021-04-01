@@ -19,23 +19,16 @@ const CityList = () => {
 		localStorage.setItem("listaCiudades", JSON.stringify(listaCiudades));
 	}, [listaCiudades]);
 
-	const eliminarCiudad = (ciudad) => {
-		var array = [...listaCiudades];
-		var index = array.indexOf(ciudad);
-		if (index !== -1) {
-			array.splice(index, 1);
-			setListaCiudades(array);
-		}
+	const eliminarCiudad = (index) => {
+		setListaCiudades(listaCiudades.filter((_, i) => i !== index));
 	};
 
 	// agrega la ciudad del input a la lista de ciudades y cierra el dialogo
 	const agregarCiudad = async () => {
 		try {
-			let response = await fetchCity(currentInput);;
-			let array = [...listaCiudades];
-			array.push(response.data.data);
+			let response = await fetchCity(currentInput);
+			setListaCiudades([...listaCiudades, response.data.data]);
 
-			setListaCiudades(array);
 			setCurrentInput("");
 			setIsModalVisible(false);
 		} catch (e) {
@@ -51,7 +44,7 @@ const CityList = () => {
 				<div key={i}>
 					<CityItem
 						elegirCiudad={cambiarCiudad}
-						eliminarCiudad={eliminarCiudad}
+						eliminarCiudad={() => eliminarCiudad(i)}
 						ciudad={ciudad}
 					/>
 				</div>

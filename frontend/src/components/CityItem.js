@@ -23,7 +23,7 @@ const CityItem = (props) => {
 				type="secondary"
 				onClick={(e) => {
 					e.stopPropagation();
-					props.eliminarCiudad(props.ciudad);
+					props.eliminarCiudad();
 				}}
 				icon={<DeleteOutlined />}
 				shape="circle"

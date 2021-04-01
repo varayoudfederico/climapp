@@ -39,8 +39,8 @@ const Main = () => {
 				content: `Buscando tiempo en ${ciudadActual.name}, ${ciudadActual.country}`,
 				duration: 0,
 			});
-			obtenerWeather(ciudadActual.name);
-			obtenerForecast(ciudadActual.name);
+			obtenerWeather();
+			obtenerForecast();
 		}
 	}, [ciudadActual]);
 

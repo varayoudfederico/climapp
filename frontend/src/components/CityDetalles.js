@@ -72,16 +72,7 @@ const CityDetalles = (props) => {
 					</div>
 				</div>
 			</div>
-			<div
-				style={{
-					color: "#aaaaaa",
-					paddingTop: "8px",
-					paddingBottom: "8px",
-					paddingLeft: "8px",
-				}}
-			>
-				Detalles
-			</div>
+			<div className="subheader-city">Detalles</div>
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">

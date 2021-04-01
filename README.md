@@ -13,28 +13,28 @@ Para obtener la informacion tanto del tiempo actual como del pronostico se utili
 ### Endpoints
 
 - /location
-  Devuelve la ubicación actual del usuario. Utiliza ip-api.
+    Devuelve la ubicación actual del usuario. Utiliza ip-api.
 
 - /current  
-  Devuelve el estado actual del tiempo en la ubicacion actual del usuario, utilizando la API de OpenWeatherMap.
+    Devuelve el estado actual del tiempo en la ubicacion actual del usuario, utilizando la API de OpenWeatherMap.
 
 - /forecast  
-  Igual que current pero para el pronostico de los próximos 8 dias.
+    Igual que current pero para el pronostico de los próximos 8 dias.
 
 - /current/:city  
-  Devuelve el estado del tiempo en la ciudad city.
+    Devuelve el estado del tiempo en la ciudad city.
 
 - /forecast/:city
-  Devuelve el pronostico del tiempo de los proximos 8 dias en la ciudad city.
+    Devuelve el pronostico del tiempo de los proximos 8 dias en la ciudad city.
 
-  - /current/coordinates  
+- /current/coordinates  
     Devuelve el estado del tiempo en las coordenadas geograficas lat y lon, que deben pasarse como parametro.
 
-  - /forecast/coordinates  
+- /forecast/coordinates  
     Devuelve el pronostico en las coordenadas geograficas lat y lon, que deben pasarse como parametro.
 
 - /ciudad/:city  
-  Devuelve la información sobre una ciudad, incluyendo país, latitud y longitud. Utiliza la API Geocoding de OpenWeatherMap.
+    Devuelve la información sobre una ciudad, incluyendo país, latitud y longitud. Utiliza la API Geocoding de OpenWeatherMap.
 
 ## Frontend
 

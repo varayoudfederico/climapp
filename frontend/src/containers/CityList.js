@@ -29,7 +29,6 @@ const CityList = () => {
 		try {
 			let response = await fetchCity(currentInput);
 			setListaCiudades([...listaCiudades, response.data.data]);
-
 			setCurrentInput("");
 			setIsModalVisible(false);
 		} catch (e) {

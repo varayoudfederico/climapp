@@ -19,9 +19,9 @@ const Main = () => {
 				setWeather(weatherResponse.data.data.weather);
 				setForecast(forecastResponse.data.data.forecast);
 			} catch (e) {
-				message.destroy("loading");
 				setCiudadActual();
 				message.error("No se pudieron obtener datos del clima");
+				message.destroy("loading");
 			}
 		};
 

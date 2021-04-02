@@ -7,7 +7,6 @@ const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 const mapDataToForecast = (data) => {
 	let forecastData = [];
 	data.daily.map((day) => {
-		console.log(day);
 		let forecastDay = {
 			dt: day.dt,
 			min: day.temp.min,

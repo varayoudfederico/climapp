@@ -60,7 +60,6 @@ const getWeatherByCity = async (req, res) => {
 
 const getWeatherByLatLon = async (req, res) => {
 	try {
-		console.log("Start w")
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${req.query.lat}&lon=${req.query.lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
@@ -72,7 +71,6 @@ const getWeatherByLatLon = async (req, res) => {
 					weather: weather,
 				};
 				res.status(200).json({ status: "success", data: respuesta });
-				console.log("Finish w")
 			})
 			.catch((err) =>
 				res

@@ -6,7 +6,7 @@ export const getTemperaturaString = (temp) => {
 };
 
 export const getVientoString = (wind_speed) => {
-	return wind_speed + " m/s";
+	return Math.round(wind_speed * 3.6) + " km/h";
 };
 
 export const getHumedadString = (humidity) => {

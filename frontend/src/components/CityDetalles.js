@@ -20,7 +20,6 @@ import {
 
 const CityDetalles = ({ weather }) => {
 	const { ciudadActual } = useContext(Context);
-
 	const { name, country } = ciudadActual;
 	const {
 		temp,
@@ -31,8 +30,9 @@ const CityDetalles = ({ weather }) => {
 		humidity,
 		wind_speed,
 		timezone_offset,
+		description, 
+		icon
 	} = weather;
-	const { description, icon } = weather.weather[0];
 
 	return (
 		<div className="container">

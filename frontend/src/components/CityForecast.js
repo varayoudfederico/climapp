@@ -4,9 +4,10 @@ import ForecastItem from "./ForecastItem";
 const CityForecast = ({ forecast }) => {
 	const renderListaCiudades = () =>
 		forecast.map((dia, i) => {
+			console.log(dia);
 			return (
 				<div key={i}>
-					<ForecastItem data={dia} />
+					<ForecastItem dia={dia} />
 				</div>
 			);
 		});

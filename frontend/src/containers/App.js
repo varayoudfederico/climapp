@@ -17,8 +17,9 @@ const App = () => {
 			try {
 				let weatherResponse = await fetchWeatherByCity(ciudadActual);
 				let forecastResponse = await fetchForecastByCity(ciudadActual);
-				setWeather(weatherResponse.data.data.weather);
-				setForecast(forecastResponse.data.data.forecast);
+
+				setWeather(weatherResponse.data.data);
+				setForecast(forecastResponse.data.data);
 			} catch (e) {
 				setCiudadActual();
 				message.error("No se pudieron obtener datos del clima");

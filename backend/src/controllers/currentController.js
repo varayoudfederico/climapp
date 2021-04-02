@@ -4,6 +4,21 @@ const ciudadController = require("./ciudadController");
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 
+const mapDataToWeatherInterface = (data) => {
+	return (weatherData = {
+		temp: data.current.temp,
+		sunrise: data.current.sunrise,
+		sunset: data.current.sunset,
+		feels_like: data.current.feels_like,
+		pressure: data.current.pressure,
+		humidity: data.current.humidity,
+		wind_speed: data.current.wind_speed,
+		timezone_offset: data.timezone_offset,
+		description: data.current.weather[0].description,
+		icon: data.current.weather[0].icon,
+	});
+};
+
 const getWeather = async (req, res) => {
 	try {
 		let location = await locationController.fetchLocation();
@@ -13,8 +28,7 @@ const getWeather = async (req, res) => {
 			.then((resp) => {
 				let respuesta = {
 					ciudad: location.data,
-					weather: resp.data.current,
-					timeOffset: resp.data.timezone_offset,
+					weather: mapDataToWeatherInterface(resp.data),
 				};
 				res.status(200).json({ status: "success", data: respuesta });
 			})
@@ -32,21 +46,17 @@ const getWeather = async (req, res) => {
 
 const getWeatherByCity = async (req, res) => {
 	try {
-		
 		let response = await ciudadController.fetchCityInfo(req.params.city);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
 			.get(url)
 			.then((resp) => {
-				let weather = resp.data.current;
-				weather["timezone_offset"] = resp.data.timezone_offset;
 				let respuesta = {
 					ciudad: response.data[0],
-					weather: weather,
+					weather: mapDataToWeatherInterface(resp.data),
 				};
 				res.status(200).json({ status: "success", data: respuesta });
-				
 			})
 			.catch((err) =>
 				res
@@ -65,12 +75,10 @@ const getWeatherByLatLon = async (req, res) => {
 		axios
 			.get(url)
 			.then((resp) => {
-				let weather = resp.data.current;
-				weather["timezone_offset"] = resp.data.timezone_offset;
-				let respuesta = {
-					weather: weather,
-				};
-				res.status(200).json({ status: "success", data: respuesta });
+				res.status(200).json({
+					status: "success",
+					data: mapDataToWeatherInterface(resp.data),
+				});
 			})
 			.catch((err) =>
 				res

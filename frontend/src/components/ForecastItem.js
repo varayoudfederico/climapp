@@ -2,11 +2,8 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import { getFechaString, getTemperaturaString } from "../utils/Utils";
 
-const ForecastItem = ({ data }) => {
-	const { dt } = data;
-	const { min, max } = data.temp;
-	const { description, icon } = data.weather[0];
-
+const ForecastItem = ({ dia }) => {
+	const { dt, min, max, description, icon } = dia;
 	return (
 		<div>
 			<div

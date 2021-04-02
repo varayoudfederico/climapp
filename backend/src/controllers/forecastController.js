@@ -4,6 +4,22 @@ const ciudadController = require("./ciudadController");
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY;
 
+const mapDataToForecast = (data) => {
+	let forecastData = [];
+	data.daily.map((day) => {
+		console.log(day);
+		let forecastDay = {
+			dt: day.dt,
+			min: day.temp.min,
+			max: day.temp.max,
+			description: day.weather[0].description,
+			icon: day.weather[0].description,
+		};
+		forecastData.push(forecastDay);
+	});
+	return forecastData;
+};
+
 const getForecast = async (req, res) => {
 	try {
 		let response = await locationController.fetchLocation();
@@ -11,7 +27,10 @@ const getForecast = async (req, res) => {
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = { ciudad: response.data, forecast: resp.data.daily };
+				let respuesta = {
+					ciudad: response.data,
+					forecast: mapDataToForecast(resp.data),
+				};
 				res.status(200).json({ status: "success", data: respuesta });
 			})
 			.catch((err) =>
@@ -34,7 +53,10 @@ const getForecastByCity = async (req, res) => {
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = { ciudad: response.data[0], forecast: resp.data.daily };
+				let respuesta = {
+					ciudad: response.data[0],
+					forecast: mapDataToForecast(resp.data),
+				};
 				res.status(200).json({ status: "success", data: respuesta });
 			})
 			.catch((err) =>
@@ -54,12 +76,9 @@ const getForecastByLatLon = async (req, res) => {
 		axios
 			.get(url)
 			.then((resp) => {
-				let weather = resp.data.current;
-				weather["timezone_offset"] = resp.data.timezone_offset;
-				let respuesta = {
-					forecast: resp.data.daily,
-				};
-				res.status(200).json({ status: "success", data: respuesta });
+				res
+					.status(200)
+					.json({ status: "success", data: mapDataToForecast(resp.data) });
 			})
 			.catch((err) =>
 				res

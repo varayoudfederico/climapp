@@ -46,4 +46,4 @@ El container principal Main.js se encarga de renderizar CityList.js, o City.js, 
 
 Al iniciar, CityList.js muestra todas las ciudades guardadas previamente por el usuario almacenadas en LocalStorage, asi como tambien la ubicacion actual del usuario a través del componente CityCurrent.js
 
-Una vez que se seleccionó una ciudad, y se obtuvieron los datos del clima, Main.js renderiza el componente City.js, el cual a su vez renderiza los componentes CityDetalles.js y CityForecast.js, los cuales muestran la informacion del tiempo y pronostico en pantalla. IconTranslator.js se encarga de renderizar el icono adecuado del pack weather-icons-react dependiendo del clima recibido.
+Una vez que se seleccionó una ciudad, y se obtuvieron los datos del clima, Main.js renderiza el componente City.js, el cual a su vez renderiza los componentes CityDetalles.js y CityForecast.js, los cuales muestran la informacion del tiempo y pronostico en pantalla. WeatherIcon.js se encarga de renderizar el icono adecuado del pack weather-icons-react dependiendo del clima recibido.

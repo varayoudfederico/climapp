@@ -1,11 +1,11 @@
 import React from "react";
 import moment from "moment";
-import { iconTranslator } from "../utils/IconTranslator";
+import WeatherIcon from "./WeatherIcon";
 import "moment/locale/es";
 
-const ForecastItem = ({data}) => {
+const ForecastItem = ({ data }) => {
 	moment.locale("es");
-	
+
 	const { dt } = data;
 	const { min, max } = data.temp;
 	const { description, icon } = data.weather[0];
@@ -34,7 +34,7 @@ const ForecastItem = ({data}) => {
 							alignItems: "center",
 						}}
 					>
-						{iconTranslator(icon, "small")}
+						<WeatherIcon iconText={icon} size="small" />
 					</div>
 					<div
 						style={{

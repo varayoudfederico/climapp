@@ -3,7 +3,7 @@ import { Statistic } from "antd";
 import Context from "../utils/Context";
 import moment from "moment";
 import "moment/locale/es";
-import { iconTranslator } from "../utils/IconTranslator";
+import WeatherIcon from "./WeatherIcon";
 import {
 	WiThermometerExterior,
 	WiStrongWind,
@@ -70,7 +70,7 @@ const CityDetalles = ({ weather }) => {
 							marginTop: "6px",
 						}}
 					>
-						{iconTranslator(icon, "big")}
+						<WeatherIcon iconText={icon} size="big"/>
 					</div>
 					<div
 						style={{ fontSize: "36px", fontWeight: "500", textAlign: "end" }}

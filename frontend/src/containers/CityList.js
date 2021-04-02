@@ -12,7 +12,7 @@ const CityList = () => {
 	);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 	const [currentInput, setCurrentInput] = useState("");
-	
+
 	const { cambiarCiudad } = useContext(Context);
 
 	//cuando detecta cambio en listaCiudades, lo guarda en localStorage
@@ -53,20 +53,27 @@ const CityList = () => {
 
 	return (
 		<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-			<div style={{ fontSize: "24px" }}>Climapp</div>
+			<div style={{ fontSize: "24px", color: "#7754F8", fontWeight: "800" }}>
+				Climapp
+			</div>
+
 			<div className="subtitle">
 				<div style={{ color: "#aaaaaa" }}>Ubicación actual</div>
 			</div>
+
 			<CityCurrent elegirCiudad={cambiarCiudad} />
+
 			<div className="subtitle">
 				<div style={{ color: "#aaaaaa" }}>Ciudades guardadas</div>
 				<Button
 					type="primary"
+					style={{ backgroundColor: "#F81F77", border: "0px" }}
 					onClick={() => setIsModalVisible(true)}
 					shape="circle"
 					icon={<PlusOutlined />}
 				></Button>
 			</div>
+
 			<div>{renderListaCiudades()}</div>
 
 			<Modal

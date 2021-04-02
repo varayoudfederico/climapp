@@ -41,7 +41,7 @@ const CityDetalles = ({ weather }) => {
 			</div>
 			<div className="card-detalles-header">
 				<div className="flex-column-center">
-					<div style={{ fontSize: "22px" }}>
+					<div style={{ fontSize: "22px", fontWeight: "500" }}>
 						{name}{" "}
 						<span
 							style={{
@@ -50,7 +50,9 @@ const CityDetalles = ({ weather }) => {
 							}}
 						>
 							{" "}
-							{country}
+							<span style={{ fontSize: "20px", fontWeight: "500" }}>
+								{country}
+							</span>
 						</span>
 					</div>
 					<div
@@ -91,7 +93,7 @@ const CityDetalles = ({ weather }) => {
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiThermometerExterior size={30} color="#ff6361" />
+						<WiThermometerExterior size={30} color="#F81F77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -101,7 +103,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiStrongWind size={30} color="#003f5c" />
+						<WiStrongWind size={30} color="#F81F77 " />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -113,7 +115,7 @@ const CityDetalles = ({ weather }) => {
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiHumidity size={30} color="#51A2DA" />
+						<WiHumidity size={30} color="#F81F77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -123,7 +125,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiBarometer size={30} color="#58508d" />
+						<WiBarometer size={30} color="#F81F77 " />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -135,7 +137,7 @@ const CityDetalles = ({ weather }) => {
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiSunrise size={30} color="#FFC300" />
+						<WiSunrise size={30} color="#F81F77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -145,7 +147,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiSunset size={30} color="#900C3E" />
+						<WiSunset size={30} color="#F81F77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}

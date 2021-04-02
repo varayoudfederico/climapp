@@ -21,7 +21,6 @@ import {
 
 const WeatherIcon = ({ iconText, size }) => {
 	const renderIcon = () => {
-		console.log(iconText, size);
 		if (size === "small") {
 			switch (iconText) {
 				case "01d":

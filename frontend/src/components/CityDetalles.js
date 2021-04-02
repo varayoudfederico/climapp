@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import { Statistic } from "antd";
 import Context from "../utils/Context";
-import moment from "moment";
-import "moment/locale/es";
 import WeatherIcon from "./WeatherIcon";
+import {
+	getTemperaturaString,
+	getVientoString,
+	getHumedadString,
+	getPresionString,
+	getHoraString,
+} from "../utils/Utils";
 import {
 	WiThermometerExterior,
 	WiStrongWind,
@@ -70,12 +75,12 @@ const CityDetalles = ({ weather }) => {
 							marginTop: "6px",
 						}}
 					>
-						<WeatherIcon iconText={icon} size="big"/>
+						<WeatherIcon iconText={icon} size="big" />
 					</div>
 					<div
 						style={{ fontSize: "36px", fontWeight: "500", textAlign: "end" }}
 					>
-						{Math.round(temp) + "°"}
+						{getTemperaturaString(temp)}
 					</div>
 				</div>
 			</div>
@@ -88,7 +93,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Sensación Térmica"
-						value={Math.round(feels_like) + "°"}
+						value={getTemperaturaString(feels_like)}
 					/>
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
@@ -98,7 +103,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Viento"
-						value={wind_speed + " m/s"}
+						value={getVientoString(wind_speed)}
 					/>
 				</div>
 			</div>
@@ -110,7 +115,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Humedad"
-						value={humidity + "%"}
+						value={getHumedadString(humidity)}
 					/>
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
@@ -120,7 +125,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Presión"
-						value={pressure + " hPa"}
+						value={getPresionString(pressure)}
 					/>
 				</div>
 			</div>
@@ -132,10 +137,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Amanecer"
-						value={moment
-							.unix(sunrise + timezone_offset)
-							.utc()
-							.format("HH:mm")}
+						value={getHoraString(sunrise, timezone_offset)}
 					/>
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
@@ -145,10 +147,7 @@ const CityDetalles = ({ weather }) => {
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
 						title="Atardecer"
-						value={moment
-							.unix(sunset + timezone_offset)
-							.utc()
-							.format("HH:mm")}
+						value={getHoraString(sunset, timezone_offset)}
 					/>
 				</div>
 			</div>

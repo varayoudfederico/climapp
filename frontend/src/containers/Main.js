@@ -12,24 +12,16 @@ const Main = () => {
 
 	//al detectar un cambio de ciudad llama a la funcion para obtener los datos del clima
 	useEffect(() => {
-		const obtenerWeather = async () => {
+		const fetchData = async () => {
 			try {
-				let response = await fetchWeatherByCity(ciudadActual);
-				setWeather(response.data.data.weather);
+				let weatherResponse = await fetchWeatherByCity(ciudadActual);
+				let forecastResponse = await fetchForecastByCity(ciudadActual);
+				setWeather(weatherResponse.data.data.weather);
+				setForecast(forecastResponse.data.data.forecast);
 			} catch (e) {
 				message.destroy("loading");
 				setCiudadActual();
 				message.error("No se pudieron obtener datos del clima");
-			}
-		};
-
-		const obtenerForecast = async () => {
-			try {
-				let response = await fetchForecastByCity(ciudadActual);
-				setForecast(response.data.data.forecast);
-			} catch (e) {
-				message.destroy("loading");
-				setCiudadActual();
 			}
 		};
 
@@ -39,8 +31,7 @@ const Main = () => {
 				content: `Buscando tiempo en ${ciudadActual.name}, ${ciudadActual.country}`,
 				duration: 0,
 			});
-			obtenerWeather();
-			obtenerForecast();
+			fetchData();
 		}
 	}, [ciudadActual]);
 

@@ -1,11 +1,8 @@
 import React from "react";
-import moment from "moment";
 import WeatherIcon from "./WeatherIcon";
-import "moment/locale/es";
+import { getFechaString, getTemperaturaString } from "../utils/Utils";
 
 const ForecastItem = ({ data }) => {
-	moment.locale("es");
-
 	const { dt } = data;
 	const { min, max } = data.temp;
 	const { description, icon } = data.weather[0];
@@ -44,7 +41,7 @@ const ForecastItem = ({ data }) => {
 					>
 						<div>
 							<div style={{ textTransform: "capitalize" }}>
-								{moment.unix(dt).format("dddd DD")}
+								{getFechaString(dt)}
 							</div>
 							<div style={{ color: "#aaaaaa", textTransform: "capitalize" }}>
 								{description}
@@ -61,9 +58,9 @@ const ForecastItem = ({ data }) => {
 				>
 					<div>
 						<div style={{ color: "#ff6361" }}>
-							{Math.round(max)}°{" "}
+							{getTemperaturaString(max)}{" "}
 							<span style={{ color: "#51A2DA", marginLeft: "8px" }}>
-								{Math.round(min)}°
+								{getTemperaturaString(min)}
 							</span>
 						</div>
 					</div>

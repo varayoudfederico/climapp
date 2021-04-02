@@ -36,6 +36,9 @@ const CityDetalles = ({ weather }) => {
 
 	return (
 		<div className="container">
+			<div className="subheader-city" style={{ paddingTop: "16px" }}>
+				Ahora
+			</div>
 			<div className="card-detalles-header">
 				<div className="flex-column-center">
 					<div style={{ fontSize: "22px" }}>
@@ -84,7 +87,7 @@ const CityDetalles = ({ weather }) => {
 					</div>
 				</div>
 			</div>
-			<div className="subheader-city">Detalles</div>
+			{/* <div className="subheader-city">Detalles</div> */}
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">

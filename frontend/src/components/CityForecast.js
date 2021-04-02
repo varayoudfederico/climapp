@@ -13,7 +13,7 @@ const CityForecast = ({ forecast }) => {
 
 	return (
 		<div>
-			<div className="subheader-city">Pronóstico próximos 8 días</div>
+			<div className="subheader-city">Próximos 8 días</div>
 			<div>{renderListaCiudades()}</div>
 		</div>
 	);

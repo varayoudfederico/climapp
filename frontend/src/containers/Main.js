@@ -18,6 +18,7 @@ const Main = () => {
 				let forecastResponse = await fetchForecastByCity(ciudadActual);
 				setWeather(weatherResponse.data.data.weather);
 				setForecast(forecastResponse.data.data.forecast);
+				console.log("Finish")
 			} catch (e) {
 				setCiudadActual();
 				message.error("No se pudieron obtener datos del clima");
@@ -40,6 +41,7 @@ const Main = () => {
 		setWeather();
 		setForecast();
 		setCiudadActual(ciudad);
+		console.log("Start")
 	};
 
 	const ocultarMensaje = () => {

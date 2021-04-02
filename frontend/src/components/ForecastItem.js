@@ -57,9 +57,9 @@ const ForecastItem = ({ data }) => {
 					}}
 				>
 					<div>
-						<div style={{ color: "#ff6361" }}>
+						<div style={{ color: "#000" }}>
 							{getTemperaturaString(max)}{" "}
-							<span style={{ color: "#51A2DA", marginLeft: "8px" }}>
+							<span style={{ color: "#aaaaaa", marginLeft: "8px" }}>
 								{getTemperaturaString(min)}
 							</span>
 						</div>

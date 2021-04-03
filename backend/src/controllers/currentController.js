@@ -21,7 +21,7 @@ const mapDataToWeatherInterface = (data) => {
 
 const getWeather = async (req, res) => {
 	try {
-		let location = await locationController.fetchLocation();
+		let location = await locationController.fetchLocation(req);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.data.lat}&lon=${location.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)

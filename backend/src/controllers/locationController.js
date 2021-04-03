@@ -1,8 +1,14 @@
 const axios = require("axios");
 
-const fetchCurrentLocation = () => {
-	const url = `http://ip-api.com/json/?fields=status,message,countryCode,city,lat,lon`;
-	return axios.get(url);
+const fetchLocation = (req) => {
+	if (req.ip === "::1") {
+		const url = `http://ip-api.com/json/?fields=status,message,countryCode,city,lat,lon`;
+		return axios.get(url);
+	} else {
+		let ip = getClientIp(req);
+		const url = `http://ip-api.com/json/${ip}?fields=status,message,countryCode,city,lat,lon`;
+		return axios.get(url);
+	}
 };
 
 const getClientIp = (req) => {
@@ -19,22 +25,12 @@ const getClientIp = (req) => {
 	return ipAddress;
 };
 
-const fetchLocationByIP = (ip) => {
-	const url = `http://ip-api.com/json/${ip}?fields=status,message,countryCode,city,lat,lon`;
-	return axios.get(url);
-};
-
 const getLocation = async (req, res) => {
 	try {
 		console.log(req.ip);
-		if (req.ip === "::1") {
-			let response = await fetchCurrentLocation();
-			res.status(200).json({ status: "success", data: response.data });
-		} else {
-			console.log("no es local: ", req.ip);
-			let response = await fetchLocationByIP(getClientIp(req));
-			res.status(200).json({ status: "success", data: response.data });
-		}
+
+		let response = await fetchLocation(req);
+		res.status(200).json({ status: "success", data: response.data });
 
 		// res.status(200).json({ status: "success", data: response.data });
 	} catch (e) {
@@ -46,6 +42,5 @@ const getLocation = async (req, res) => {
 
 module.exports = {
 	getLocation,
-	fetchCurrentLocation,
-	fetchLocationByIP,
+	fetchLocation,
 };

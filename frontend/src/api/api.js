@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const hostUrl = "http://localhost:5000/v1";
+// const hostUrl = "http://localhost:5000/v1";
+const hostUrl = "https://cryptic-springs-45012.herokuapp.com/v1";
 
 export const fetchLocation = () => {
 	const url = hostUrl + `/location`;

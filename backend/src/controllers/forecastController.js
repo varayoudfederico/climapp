@@ -21,7 +21,7 @@ const mapDataToForecast = (data) => {
 
 const getForecast = async (req, res) => {
 	try {
-		let response = await locationController.fetchLocation();
+		let response = await locationController.fetchLocation(req);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.lat}&lon=${response.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)

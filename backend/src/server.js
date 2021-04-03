@@ -14,7 +14,7 @@ const currentRouter = require("./routers/currentRouter");
 const forecastRouter = require("./routers/forecastRouter");
 const ciudadRouter = require("./routers/ciudadRouter");
 
-app.use("/v1/location", locationRouter);
+app.use("/v1/locatiion", locationRouter);
 app.use("/v1/current", currentRouter);
 app.use("/v1/forecast", forecastRouter);
 app.use("/v1/ciudad", ciudadRouter);

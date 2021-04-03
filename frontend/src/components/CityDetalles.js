@@ -97,7 +97,7 @@ const CityDetalles = ({ weather }) => {
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
-						title="Sensación Térmica"
+						title="Sens. Térmica"
 						value={getTemperaturaString(feels_like)}
 					/>
 				</div>

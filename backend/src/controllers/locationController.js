@@ -7,21 +7,15 @@ const fetchCurrentLocation = () => {
 
 const getClientIp = (req) => {
 	var ipAddress;
-	// Amazon EC2 / Heroku workaround to get real client IP
+
 	var forwardedIpsStr = req.header("x-forwarded-for");
 	if (forwardedIpsStr) {
-		// 'x-forwarded-for' header may return multiple IP addresses in
-		// the format: "client IP, proxy 1 IP, proxy 2 IP" so take the
-		// the first one
 		var forwardedIps = forwardedIpsStr.split(",");
 		ipAddress = forwardedIps[0];
 	}
 	if (!ipAddress) {
-		// Ensure getting client IP address still works in
-		// development environment
 		ipAddress = req.connection.remoteAddress;
 	}
-	console.log("IP DETECTADA: ", ipAddress);
 	return ipAddress;
 };
 
@@ -34,7 +28,6 @@ const getLocation = async (req, res) => {
 	try {
 		console.log(req.ip);
 		if (req.ip === "::1") {
-			console.log("es local: ", req.ip);
 			let response = await fetchCurrentLocation();
 			res.status(200).json({ status: "success", data: response.data });
 		} else {

@@ -12,17 +12,16 @@ const fetchLocation = (req) => {
 };
 
 const getClientIp = (req) => {
-	var ipAddress;
-
-	var forwardedIpsStr = req.header("x-forwarded-for");
+	let ip;
+	let forwardedIpsStr = req.header("x-forwarded-for");
 	if (forwardedIpsStr) {
-		var forwardedIps = forwardedIpsStr.split(",");
-		ipAddress = forwardedIps[0];
+		let forwardedIps = forwardedIpsStr.split(",");
+		ip = forwardedIps[0];
 	}
-	if (!ipAddress) {
-		ipAddress = req.connection.remoteAddress;
+	if (!ip) {
+		ip = req.connection.remoteAddress;
 	}
-	return ipAddress;
+	return ip;
 };
 
 const getLocation = async (req, res) => {

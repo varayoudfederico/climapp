@@ -77,7 +77,7 @@ const CityList = () => {
 			<div>{renderListaCiudades()}</div>
 
 			<Modal
-				title="Agregar Ciudad"
+				title="Agregar ciudad"
 				visible={isModalVisible}
 				okText="Buscar y Agregar"
 				cancelText="Cancelar"
@@ -85,6 +85,7 @@ const CityList = () => {
 				onCancel={() => setIsModalVisible(false)}
 			>
 				<Input
+					placeholder="Ingrese una ciudad"
 					onChange={(e) => setCurrentInput(e.target.value)}
 					value={currentInput}
 				/>

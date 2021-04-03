@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "antd";
+import { Button, Popconfirm } from "antd";
 import { DeleteOutlined, EnvironmentOutlined } from "@ant-design/icons";
 
 const CityItem = ({ ciudad, elegirCiudad, eliminarCiudad }) => {
@@ -16,15 +16,28 @@ const CityItem = ({ ciudad, elegirCiudad, eliminarCiudad }) => {
 					</span>
 				</span>
 			</div>
-			<Button
-				type="secondary"
-				onClick={(e) => {
+
+			<Popconfirm
+				title="Seguro desea eliminar?"
+				onConfirm={(e) => {
 					e.stopPropagation();
 					eliminarCiudad();
 				}}
-				icon={<DeleteOutlined />}
-				shape="circle"
-			/>
+				onCancel={(e) => {
+					e.stopPropagation();
+				}}
+				okText="Si"
+				cancelText="No"
+			>
+				<Button
+					type="secondary"
+					onClick={(e) => {
+						e.stopPropagation();
+					}}
+					icon={<DeleteOutlined />}
+					shape="circle"
+				/>
+			</Popconfirm>
 		</div>
 	);
 };

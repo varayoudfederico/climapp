@@ -73,7 +73,7 @@ body {
 }
 
 .city-item-icon {
-	color: #7754F8;
+	color: #7754f8;
 }
 
 .country-code-color {
@@ -114,4 +114,14 @@ body {
 	color: #aaaaaa;
 	padding-top: 16px;
 	padding-left: 8px;
+}
+
+.ant-btn-primary {
+	background-color: rgb(248, 31, 119);
+	border: rgb(248, 31, 119);
+}
+
+.ant-btn-primary:hover {
+	background-color: rgb(255, 91, 156);
+	border: rgb(248, 31, 119);
 }

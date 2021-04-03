@@ -26,8 +26,6 @@ const getClientIp = (req) => {
 
 const getLocation = async (req, res) => {
 	try {
-		console.log(req.ip);
-
 		let response = await fetchLocation(req);
 		res.status(200).json({ status: "success", data: response.data });
 

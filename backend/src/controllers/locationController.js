@@ -6,7 +6,7 @@ const fetchCurrentLocation = () => {
 };
 
 const fetchLocationByIP = (ip) => {
-	const url = `http://ip-api.com/json/24.48.0.1?fields=status,message,countryCode,city,lat,lon`;
+	const url = `http://ip-api.com/json/${ip}?fields=status,message,countryCode,city,lat,lon`;
 	return axios.get(url);
 };
 
@@ -14,11 +14,11 @@ const getLocation = async (req, res) => {
 	try {
 		console.log(req.ip);
 		if (req.ip === "::1") {
-			console.log("es local");
+			console.log("es local: ", req.ip);
 			let response = await fetchCurrentLocation();
 			res.status(200).json({ status: "success", data: response.data });
 		} else {
-			console.log("no es local");
+			console.log("no es local: ", req.ip);
 			let response = await fetchLocationByIP(req.ip);
 			res.status(200).json({ status: "success", data: response.data });
 		}

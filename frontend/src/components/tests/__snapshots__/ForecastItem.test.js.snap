@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`coincide con el snapshot 1`] = `
+<div>
+  <div
+    className="card"
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+        "padding": "12px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "column",
+            "marginRight": "12px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#7754F8",
+              "fontSize": "16px",
+            }
+          }
+        >
+          <i
+            className="wi wi-cloudy wi-fw"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "column",
+          }
+        }
+      >
+        <div>
+          <div
+            style={
+              Object {
+                "textTransform": "capitalize",
+              }
+            }
+          >
+            domingo 04
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#aaaaaa",
+                "textTransform": "capitalize",
+              }
+            }
+          >
+            muy nuboso
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "color": "#000",
+            }
+          }
+        >
+          27°
+           
+          <span
+            style={
+              Object {
+                "color": "#aaaaaa",
+                "marginLeft": "8px",
+              }
+            }
+          >
+            16°
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`coincide con el snapshot de ForecastItem 1`] = `
+<div>
+  <div
+    className="card"
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+        "padding": "12px",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "column",
+            "marginRight": "12px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#7754F8",
+              "fontSize": "16px",
+            }
+          }
+        >
+          <i
+            className="wi wi-cloudy wi-fw"
+          />
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "column",
+          }
+        }
+      >
+        <div>
+          <div
+            style={
+              Object {
+                "textTransform": "capitalize",
+              }
+            }
+          >
+            domingo 04
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#aaaaaa",
+                "textTransform": "capitalize",
+              }
+            }
+          >
+            muy nuboso
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+        }
+      }
+    >
+      <div>
+        <div
+          style={
+            Object {
+              "color": "#000",
+            }
+          }
+        >
+          27°
+           
+          <span
+            style={
+              Object {
+                "color": "#aaaaaa",
+                "marginLeft": "8px",
+              }
+            }
+          >
+            16°
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

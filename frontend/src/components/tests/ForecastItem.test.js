@@ -1,11 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import ForecastItem from "../ForecastItem";
-// import App from "../../containers/App";
 
-test("testing if works", () => {
-	expect(true).toBe(true);
-});
 
 test("renders the ForecastItem component correctly", () => {
 	const mockData = {

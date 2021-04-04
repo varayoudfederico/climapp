@@ -5,7 +5,7 @@ import City from "./City";
 import CityList from "./CityList";
 import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";
 import { message } from "antd";
-import "../styles/app.css";
+import "../styles/css/app.css";
 
 
 const App = () => {

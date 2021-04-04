@@ -56,7 +56,7 @@ const CityCurrent = () => {
 	};
 
 	return (
-		<div className="city-item-card" onClick={() => cambiarCiudad(currentCity)}>
+		<div className="city-current-card" onClick={() => cambiarCiudad(currentCity)}>
 			<div>{renderCurrentCity()}</div>
 		</div>
 	);

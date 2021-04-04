@@ -4,7 +4,7 @@ import { getFechaString, getTemperaturaString } from "../utils/Utils";
 
 const ForecastItem = ({ dia }) => {
 	const { dt, min, max, description, icon } = dia;
-	
+	console.log(dia);
 	return (
 		<div>
 			<div
@@ -29,7 +29,7 @@ const ForecastItem = ({ dia }) => {
 							alignItems: "center",
 						}}
 					>
-						<WeatherIcon iconText={icon} size="small" />
+						<WeatherIcon iconText={icon} size="16px" color="#7754F8" />
 					</div>
 					<div
 						style={{

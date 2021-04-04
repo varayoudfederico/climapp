@@ -9,14 +9,6 @@ import {
 	getPresionString,
 	getHoraString,
 } from "../utils/Utils";
-import {
-	WiThermometerExterior,
-	WiStrongWind,
-	WiHumidity,
-	WiBarometer,
-	WiSunrise,
-	WiSunset,
-} from "weather-icons-react";
 
 const CityDetalles = ({ weather }) => {
 	const { ciudadActual } = useContext(Context);
@@ -30,8 +22,8 @@ const CityDetalles = ({ weather }) => {
 		humidity,
 		wind_speed,
 		timezone_offset,
-		description, 
-		icon
+		description,
+		icon,
 	} = weather;
 
 	return (
@@ -80,7 +72,7 @@ const CityDetalles = ({ weather }) => {
 							marginTop: "6px",
 						}}
 					>
-						<WeatherIcon iconText={icon} size="big" />
+						<WeatherIcon iconText={icon} size="30px" color="#7754F8" />
 					</div>
 					<div
 						style={{ fontSize: "36px", fontWeight: "500", textAlign: "end" }}
@@ -89,11 +81,10 @@ const CityDetalles = ({ weather }) => {
 					</div>
 				</div>
 			</div>
-			{/* <div className="subheader-city">Detalles</div> */}
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiThermometerExterior size={30} color="#F81F77" />
+						<WeatherIcon iconText="senstermica" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -103,7 +94,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiStrongWind size={30} color="#F81F77 " />
+						<WeatherIcon iconText="viento" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -115,7 +106,7 @@ const CityDetalles = ({ weather }) => {
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiHumidity size={30} color="#F81F77" />
+						<WeatherIcon iconText="humedad" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -125,7 +116,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiBarometer size={30} color="#F81F77 " />
+						<WeatherIcon iconText="presion" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -137,7 +128,7 @@ const CityDetalles = ({ weather }) => {
 			<div className="detalles-row">
 				<div className="weather-item" style={{ marginRight: "4px" }}>
 					<div className="weather-statistic">
-						<WiSunrise size={30} color="#F81F77" />
+						<WeatherIcon iconText="amanecer" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}
@@ -147,7 +138,7 @@ const CityDetalles = ({ weather }) => {
 				</div>
 				<div className="weather-item" style={{ marginLeft: "4px" }}>
 					<div className="weather-statistic">
-						<WiSunset size={30} color="#F81F77" />
+						<WeatherIcon iconText="atardecer" size="16px" color="#f81f77" />
 					</div>
 					<Statistic
 						valueStyle={{ fontSize: "20px" }}

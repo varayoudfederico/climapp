@@ -72,6 +72,20 @@ body {
 	padding: 12px;
 }
 
+.city-current-card {
+	border-radius: 16px;
+	margin-top: 8px;
+	margin-bottom: 4px;
+	border: 0px;
+	background-color: #fafafa;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
 .city-item-icon {
 	color: #7754f8;
 }
@@ -97,7 +111,8 @@ body {
 }
 
 .weather-statistic {
-	padding-right: 6px;
+	padding: 4px;
+	padding-right: 12px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -127,7 +142,7 @@ body {
 }
 
 .ant-btn-primary {
-	background-color: rgb(248, 31, 119);
+	background-color: #f81f77;
 	border: rgb(248, 31, 119);
 }
 

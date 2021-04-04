@@ -7,6 +7,7 @@ import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";
 import { message } from "antd";
 import "../styles/app.css";
 
+
 const App = () => {
 	const [weather, setWeather] = useState();
 	const [forecast, setForecast] = useState();

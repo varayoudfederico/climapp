@@ -53,7 +53,7 @@ body {
 	padding: 12px;
 	border-radius: 16px;
 	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 	border: 0px;
 	background-color: #fafafa;
 	padding-top: 16px;
@@ -63,7 +63,7 @@ body {
 .city-item-card {
 	border-radius: 16px;
 	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-bottom: 4px;
 	border: 0px;
 	background-color: #fafafa;
 	display: flex;
@@ -88,8 +88,8 @@ body {
 .weather-item {
 	display: flex;
 	border-radius: 16px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-top: 4px;
+	margin-bottom: 4px;
 	border: 0px;
 	background-color: #fafafa;
 	width: 100%;

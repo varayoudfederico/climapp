@@ -24,25 +24,25 @@ const WeatherIcon = ({ iconText, size }) => {
 		if (size === "small") {
 			switch (iconText) {
 				case "01d":
-					return <WiDaySunny size={24} color="#7754F8" />;
+					return <WiDaySunny size={26} color="#7754F8" />;
 				case "02d":
-					return <WiDayCloudy size={24} color="#7754F8" />;
+					return <WiDayCloudy size={26} color="#7754F8" />;
 				case "03d":
-					return <WiCloud size={24} color="#7754F8" />;
+					return <WiCloud size={26} color="#7754F8" />;
 				case "04d":
-					return <WiCloudy size={24} color="#7754F8" />;
+					return <WiCloudy size={26} color="#7754F8" />;
 				case "09d":
-					return <WiDayShowers size={24} color="#7754F8" />;
+					return <WiDayShowers size={26} color="#7754F8" />;
 				case "10d":
-					return <WiDayRain size={24} color="#7754F8" />;
+					return <WiDayRain size={26} color="#7754F8" />;
 				case "11d":
-					return <WiDayThunderstorm size={24} color="#7754F8" />;
+					return <WiDayThunderstorm size={26} color="#7754F8" />;
 				case "13d":
-					return <WiDaySnow size={24} color="#7754F8" />;
+					return <WiDaySnow size={26} color="#7754F8" />;
 				case "50d":
-					return <WiFog size={24} color="#7754F8" />;
+					return <WiFog size={26} color="#7754F8" />;
 				default:
-					return <WiDaySunny size={24} color="#7754F8" />;
+					return <WiDaySunny size={26} color="#7754F8" />;
 			}
 		} else {
 			switch (iconText) {

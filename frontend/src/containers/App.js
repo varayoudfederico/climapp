@@ -30,7 +30,6 @@ const App = () => {
 		};
 
 		if (ciudadActual) {
-			console.log("lodaign");
 			message.loading({
 				key: "loading",
 				content: `Buscando tiempo en ${ciudadActual.name}, ${ciudadActual.country}`,

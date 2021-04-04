@@ -4,6 +4,7 @@ import { getFechaString, getTemperaturaString } from "../utils/Utils";
 
 const ForecastItem = ({ dia }) => {
 	const { dt, min, max, description, icon } = dia;
+	
 	return (
 		<div>
 			<div

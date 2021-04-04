@@ -12,7 +12,7 @@ const mapDataToForecast = (data) => {
 			min: day.temp.min,
 			max: day.temp.max,
 			description: day.weather[0].description,
-			icon: day.weather[0].description,
+			icon: day.weather[0].icon,
 		};
 		forecastData.push(forecastDay);
 	});

@@ -110,6 +110,16 @@ body {
 	padding-top: 16px;
 }
 
+.main-header-text {
+	font-size: 24px;
+	color: #7754f8;
+	font-weight: 800;
+}
+
+.grey-color {
+	color: #aaaaaa;
+}
+
 .subheader-city {
 	color: #aaaaaa;
 	padding-top: 16px;

@@ -53,18 +53,16 @@ const CityList = () => {
 
 	return (
 		<div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
-			<div style={{ fontSize: "24px", color: "#7754F8", fontWeight: "800" }}>
-				Climapp
-			</div>
+			<div className="main-header-text">Climapp</div>
 
-			<div className="subtitle">
-				<div style={{ color: "#aaaaaa" }}>Ubicación actual</div>
+			<div className="subtitle grey-color">
+				<div>Ubicación actual</div>
 			</div>
 
 			<CityCurrent elegirCiudad={cambiarCiudad} />
 
-			<div className="subtitle">
-				<div style={{ color: "#aaaaaa" }}>Ciudades guardadas</div>
+			<div className="subtitle grey-color">
+				<div>Ciudades guardadas</div>
 				<Button
 					type="primary"
 					style={{ backgroundColor: "#F81F77", border: "0px" }}

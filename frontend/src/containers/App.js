@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Context from "../utils/Context";
 import City from "./City";
 import CityList from "./CityList";
@@ -31,6 +30,7 @@ const App = () => {
 		};
 
 		if (ciudadActual) {
+			console.log("lodaign");
 			message.loading({
 				key: "loading",
 				content: `Buscando tiempo en ${ciudadActual.name}, ${ciudadActual.country}`,

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { fetchLocation } from "../api/api";
 import Context from "../utils/Context";
 import { message } from "antd";
-import { CompassOutlined, LoadingOutlined } from "@ant-design/icons";
+import { EnvironmentOutlined, LoadingOutlined } from "@ant-design/icons";
 
 const CityCurrent = () => {
 	const [currentCity, setCurrentCity] = useState();
@@ -32,7 +32,7 @@ const CityCurrent = () => {
 			return (
 				<div>
 					<span className="city-item-icon">
-						<CompassOutlined />
+						<EnvironmentOutlined />
 					</span>
 					<span style={{ marginLeft: "8px" }}>
 						<span>{currentCity.name}</span>
@@ -49,7 +49,7 @@ const CityCurrent = () => {
 						<LoadingOutlined />
 					</span>
 					<span style={{ marginLeft: "8px" }}>
-						<span>Buscando...</span>
+						<span>Detectando...</span>
 					</span>
 				</div>
 			);

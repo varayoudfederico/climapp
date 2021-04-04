@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Context from "../utils/Context";
 import City from "./City";
 import CityList from "./CityList";
@@ -10,6 +12,7 @@ const App = () => {
 	const [weather, setWeather] = useState();
 	const [forecast, setForecast] = useState();
 	const [ciudadActual, setCiudadActual] = useState();
+	let history = useHistory();
 
 	//al detectar un cambio de ciudad llama a la funcion para obtener los datos del clima
 	useEffect(() => {
@@ -44,18 +47,14 @@ const App = () => {
 		setCiudadActual(ciudad);
 	};
 
-	const ocultarMensaje = () => {
-		message.destroy("loading");
-	};
-
-	const renderView = () => {
+	useEffect(() => {
 		if (ciudadActual && weather && forecast) {
-			ocultarMensaje();
-			return <City weather={weather} forecast={forecast} />;
+			message.destroy("loading");
+			history.push("/city");
 		} else {
-			return <CityList />;
+			history.push("/");
 		}
-	};
+	}, [ciudadActual, weather, forecast, history]);
 
 	return (
 		<div className="app">
@@ -65,7 +64,14 @@ const App = () => {
 					cambiarCiudad,
 				}}
 			>
-				{renderView()}
+				<Switch>
+					<Route path="/city">
+						<City weather={weather} forecast={forecast} />
+					</Route>
+					<Route path="/">
+						<CityList />
+					</Route>
+				</Switch>
 			</Context.Provider>
 		</div>
 	);

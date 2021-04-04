@@ -16,8 +16,8 @@ const City = ({ weather, forecast }) => {
 				shape="circle"
 				icon={<ArrowLeftOutlined />}
 			></Button>
-			<CityDetalles weather={weather} />
-			<CityForecast forecast={forecast} />
+			{weather && <CityDetalles weather={weather} />}
+			{forecast && <CityForecast forecast={forecast} />}
 		</div>
 	);
 };

@@ -21,12 +21,12 @@ const mapDataToForecast = (data) => {
 
 const getForecast = async (req, res) => {
 	try {
-		let response = await locationController.fetchLocation(req);
+		const response = await locationController.fetchLocation(req);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.lat}&lon=${response.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = {
+				const respuesta = {
 					ciudad: response.data,
 					forecast: mapDataToForecast(resp.data),
 				};
@@ -46,13 +46,13 @@ const getForecast = async (req, res) => {
 
 const getForecastByCity = async (req, res) => {
 	try {
-		let response = await ciudadController.fetchCityInfo(req.params.city);
+		const response = await ciudadController.fetchCityInfo(req.params.city);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = {
+				const respuesta = {
 					ciudad: response.data[0],
 					forecast: mapDataToForecast(resp.data),
 				};

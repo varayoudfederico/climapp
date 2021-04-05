@@ -19,8 +19,8 @@ const App = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				let weatherResponse = await fetchWeatherByCity(ciudadActual);
-				let forecastResponse = await fetchForecastByCity(ciudadActual);
+				const weatherResponse = await fetchWeatherByCity(ciudadActual);
+				const forecastResponse = await fetchForecastByCity(ciudadActual);
 
 				setWeather(weatherResponse.data.data);
 				setForecast(forecastResponse.data.data);
@@ -58,7 +58,6 @@ const App = () => {
 		}
 	}, [ciudadActual, weather, forecast, history]);
 
-	
 	const cambiarCiudad = (ciudad) => {
 		if (!isLoading) {
 			setWeather();

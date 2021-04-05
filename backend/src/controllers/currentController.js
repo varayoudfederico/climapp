@@ -21,12 +21,12 @@ const mapDataToWeatherInterface = (data) => {
 
 const getWeather = async (req, res) => {
 	try {
-		let location = await locationController.fetchLocation(req);
+		const location = await locationController.fetchLocation(req);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.data.lat}&lon=${location.data.lon}&appid=${API_KEY}&units=metric&lang=es`;
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = {
+				const respuesta = {
 					ciudad: location.data,
 					weather: mapDataToWeatherInterface(resp.data),
 				};
@@ -46,13 +46,13 @@ const getWeather = async (req, res) => {
 
 const getWeatherByCity = async (req, res) => {
 	try {
-		let response = await ciudadController.fetchCityInfo(req.params.city);
+		const response = await ciudadController.fetchCityInfo(req.params.city);
 		const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${API_KEY}&units=metric&lang=es`;
 
 		axios
 			.get(url)
 			.then((resp) => {
-				let respuesta = {
+				const respuesta = {
 					ciudad: response.data[0],
 					weather: mapDataToWeatherInterface(resp.data),
 				};

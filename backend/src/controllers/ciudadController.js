@@ -9,7 +9,7 @@ const fetchCityInfo = (ciudad) => {
 
 const getCityData = async (req, res) => {
 	try {
-		let response = await fetchCityInfo(req.params.city);
+		const response = await fetchCityInfo(req.params.city);
 		if (response.data[0]) {
 			res.status(200).json({ status: "success", data: response.data[0] });
 		} else {

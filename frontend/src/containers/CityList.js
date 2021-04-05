@@ -27,7 +27,7 @@ const CityList = () => {
 	// agrega la ciudad del input a la lista de ciudades y cierra el dialogo
 	const agregarCiudad = async () => {
 		try {
-			let response = await fetchCity(currentInput);
+			const response = await fetchCity(currentInput);
 			setListaCiudades([...listaCiudades, response.data.data]);
 			setCurrentInput("");
 			setIsModalVisible(false);

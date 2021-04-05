@@ -14,8 +14,8 @@ const CityCurrent = () => {
 
 	const obtenerLocation = async () => {
 		try {
-			let response = await fetchLocation();
-			let ciudad = {
+			const response = await fetchLocation();
+			const ciudad = {
 				name: response.data.data.city,
 				country: response.data.data.countryCode,
 				lat: response.data.data.lat,

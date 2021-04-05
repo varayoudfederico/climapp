@@ -6,6 +6,7 @@ body {
 	padding: 0;
 	font-family: "Source Sans Pro", sans-serif;
 	cursor: default;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 .app {

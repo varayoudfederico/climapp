@@ -33,7 +33,7 @@ const CityDetalles = ({ weather }) => {
 			</div>
 			<div className="card-detalles-header">
 				<div className="flex-column-center">
-					<div style={{ fontSize: "26px", fontWeight: "700" }}>
+					<div style={{ fontSize: "22px", fontWeight: "500" }}>
 						{name}{" "}
 						<span
 							style={{
@@ -42,7 +42,7 @@ const CityDetalles = ({ weather }) => {
 							}}
 						>
 							{" "}
-							<span style={{ fontSize: "20px", fontWeight: "500" }}>
+							<span style={{ fontSize: "18px", fontWeight: "500" }}>
 								{country}
 							</span>
 						</span>
@@ -51,7 +51,7 @@ const CityDetalles = ({ weather }) => {
 						style={{
 							color: "#aaaaaa",
 							textTransform: "capitalize",
-							fontSize: "18px",
+							fontSize: "16px",
 						}}
 					>
 						{description}

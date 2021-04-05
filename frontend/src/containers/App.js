@@ -7,11 +7,12 @@ import { fetchWeatherByCity, fetchForecastByCity } from "../api/api";
 import { message } from "antd";
 import "../styles/css/app.css";
 
-
 const App = () => {
 	const [weather, setWeather] = useState();
 	const [forecast, setForecast] = useState();
 	const [ciudadActual, setCiudadActual] = useState();
+	const [isLoading, setIsLoading] = useState(false);
+
 	let history = useHistory();
 
 	//al detectar un cambio de ciudad llama a la funcion para obtener los datos del clima
@@ -23,38 +24,48 @@ const App = () => {
 
 				setWeather(weatherResponse.data.data);
 				setForecast(forecastResponse.data.data);
+				setIsLoading(false);
 			} catch (e) {
 				setCiudadActual();
 				message.error("No se pudieron obtener datos del clima");
-				message.destroy("loading");
+				setIsLoading(false);
 			}
 		};
 
 		if (ciudadActual) {
+			setIsLoading(true);
+			fetchData();
+		}
+	}, [ciudadActual]);
+
+	useEffect(() => {
+		if (isLoading) {
 			message.loading({
 				key: "loading",
 				content: `Buscando tiempo en ${ciudadActual.name}, ${ciudadActual.country}`,
 				duration: 0,
 			});
-			fetchData();
+		} else {
+			message.destroy("loading");
 		}
-	}, [ciudadActual]);
-
-	//obtiene los datos del clima de la ciudad que se pasa por argumento y lo guarda en el estado
-	const cambiarCiudad = (ciudad) => {
-		setWeather();
-		setForecast();
-		setCiudadActual(ciudad);
-	};
+	}, [isLoading, ciudadActual]);
 
 	useEffect(() => {
 		if (ciudadActual && weather && forecast) {
-			message.destroy("loading");
 			history.push("/city");
 		} else {
 			history.push("/");
 		}
 	}, [ciudadActual, weather, forecast, history]);
+
+	
+	const cambiarCiudad = (ciudad) => {
+		if (!isLoading) {
+			setWeather();
+			setForecast();
+			setCiudadActual(ciudad);
+		}
+	};
 
 	return (
 		<div className="app">

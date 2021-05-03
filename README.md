@@ -4,6 +4,8 @@ Aplicacion para consulta de clima y pronóstico desarrollada en React / Express.
 
 #### Live Demo: https://climappv1.netlify.app
 
+#### Versión hecha con TypeScript: https://github.com/varayoudfederico/climapp-ts
+
 ## Backend
 
 Desarrollado con Express.js.
